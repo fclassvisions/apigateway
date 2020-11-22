@@ -13,10 +13,17 @@ app.post('/bogusapi', (req, res, next) => {
 })
 
 app.listen(PORT, () => {
+    const authString = 'johndoe:pw'
+    const encodedAuthString = Buffer.from(authString, 'utf8').toString('base64')
+    console.log(encodedAuthString)
+
     axios({
         method: 'POST',
         url: 'http://localhost:3000/register',
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+            'authorization': encodedAuthString,
+            'Content-Type': 'application/json'
+        },
         data: {
             apiName: "registrytest",
             protocol: "http",

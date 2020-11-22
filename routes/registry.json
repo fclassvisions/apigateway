@@ -22,5 +22,13 @@
             ],
             "loadBalanceStrategy": "ROUND_ROBIN"
         }
+    },
+    "auth": {
+        "users": {
+            "johndoe": {
+                "username": "johndoe",
+                "password": "password"
+            }
+        }
     }
 }
