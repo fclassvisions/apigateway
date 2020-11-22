@@ -5,6 +5,8 @@ const registry = require('./routes/registry.json')
 const routes = require('./routes')
 const PORT = 3000
 
+app.use(express.static('public'))
+app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(helmet())
 
@@ -27,6 +29,9 @@ const auth = (req, res, next) => {
     }
 }
 
+app.get('/ui', (req, res) => {
+    res.render('index', { services: registry.services })
+})
 app.use(auth)
 app.use('/', routes)
 
