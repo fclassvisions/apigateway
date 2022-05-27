@@ -1,0 +1,63 @@
+{
+  "info": {
+    "_postman_id": "22d75d6c-cf6b-4d02-9bed-655bfa3bc58b",
+    "name": "API Gateway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fake API",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "am9obmRvZTpwYXNzd29yZA==",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/registrytest/fakeapi",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["registrytest", "fakeapi"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bogus Api",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "am9obmRvZTpwYXNzd29yZA==",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"this is a test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/registrytest/bogusapi",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["registrytest", "bogusapi"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
